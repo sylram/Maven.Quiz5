@@ -129,6 +129,7 @@ public class GetStudyMapTest {
 
         // when
         Map<Student, Double> studyMap = zipCodeWilmington.getStudyMap();
+
         List<Map.Entry<Student, Double>> entrySet = new ArrayList<>(studyMap.entrySet());
         Map.Entry<Student, Double> firstEntry = entrySet.get(0);
         Map.Entry<Student, Double> secondEntry = entrySet.get(1);

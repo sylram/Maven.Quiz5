@@ -1,37 +1,66 @@
 package rocks.zipcode.io.quiz4.generics;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
  * @author leon on 18/12/2018.
  */
-public class Group<_> {
+public class Group<T> implements GroupInterface<T>{
+
+    ArrayList<T> arrayList;
     public Group() {
-        throw new UnsupportedOperationException("Method not yet implemented");
+        this.arrayList = new ArrayList<>();
+//        throw new UnsupportedOperationException("Method not yet implemented");
     }
 
     public Integer count() {
-        return null;
+        return arrayList.size();
+    }
+//
+//    public void insert(T value) {
+//        arrayList.add(value);
+//    }
+//
+//    public Boolean has(T value) {
+//        return null;
+//    }
+
+    public T fetch(int indexOfValue) {
+        return arrayList.get(indexOfValue);
     }
 
-    public void insert(_ value) {
+    @Override
+    public void insert(T string) {
+        arrayList.add(string);
+
     }
 
-    public Boolean has(_ value) {
-        return null;
+    @Override
+    public void delete(T valueToInsert) {
+        arrayList.remove(valueToInsert);
+
     }
 
-    public _ fetch(int indexOfValue) {
-        return null;
+
+    @Override
+    public Boolean has(T valueToInsert) {
+        return arrayList.contains(valueToInsert);
     }
 
-    public void delete(_ value) {
-    }
+
 
     public void clear() {
+        arrayList.clear();
     }
 
-    public Iterator<_> iterator() {
-        return null;
+    public Iterator<T> iterator() {
+        return arrayList.iterator();
+    }
+
+    @Override
+    public String toString() {
+        return
+                ""+arrayList;
     }
 }
