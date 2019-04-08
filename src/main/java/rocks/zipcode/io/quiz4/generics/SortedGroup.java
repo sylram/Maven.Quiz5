@@ -3,33 +3,34 @@ package rocks.zipcode.io.quiz4.generics;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.TreeSet;
 
 /**
  * @author leon on 18/12/2018.
  */
 public class SortedGroup<T> extends Group<T> implements Comparator<T> {
 
-    ArrayList<T> arrayList;
+    TreeSet<T> treeSet;
 
     public SortedGroup(){
-       this.arrayList = new ArrayList<>();
+       this.treeSet = new TreeSet<>();
 
 
     }
 
     public void insert(T value) {
-        arrayList.add(value);
+        treeSet.add(value);
 //        Collections<T>.sort();
     }
 
 
     public void delete(T value) {
-       arrayList.remove(value);
+      treeSet.remove(value);
     }
 
     public Integer indexOf(T value) {
         System.out.println(arrayList.indexOf(value));
-        return arrayList.indexOf(value);
+        return treeSet.headSet(value).size();
     }
 
     public  <T extends Comparable<T>> void sort(ArrayList<T> arrayList){
