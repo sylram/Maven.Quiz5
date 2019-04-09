@@ -7,48 +7,54 @@ import java.util.TreeSet;
  */
 public class ComparableTreeSet<E> extends TreeSet<E> implements Comparable<E> {
 
-    TreeSet<E> treeSet;
+
 
 
 
     public ComparableTreeSet(E... arr) {
-
-        this.treeSet = new TreeSet<>();
-
+       super();
         for(E e: arr){
-        treeSet.add(e);}
+            add(e);
+        }
+       // System.out.println(treeSet);
 
     }
 
     public ComparableTreeSet() {
-        this.treeSet = new TreeSet<>();
+        //this.treeSet = new TreeSet<>();
 
     }
 
     public int compareTo(ComparableTreeSet<E> e) {
+//        E first = treeSet.first();
+//        E second = null;
+//        System.out.println(first.hashCode());
 
         int comp = 0;
-        for (E o : e) {
-            o.
-            comp = this.first().compareTo(o);
+        comp = this.toString().compareTo(e.toString());
+//
+//        comp=treeSet.compareTo(e);
+//        for (E o : e) {
+
             System.out.println(comp);
-            break;
+
+        return comp;
 
 
+        }
 
-        }return comp;
-    }
-
-
-    public int compareTo(E o) {
-        return this.compareTo(o);
-    }
-    public  int Comparator(E a, E b){
-       return 0;
-    }
 
     @Override
-    public String toString() {
-        return ""+ treeSet;
+    public int compareTo(E o) {
+
+        return this.compareTo((ComparableTreeSet<E>)o);
     }
+//    public  int Comparator(E a, E b){
+//       return 0;
+//    }
+
+//    @Override
+//    public String toString() {
+//        return ""+ treeSet;
+//    }
 }
